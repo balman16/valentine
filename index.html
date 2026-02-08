@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For Bhargavi ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: 
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("bg.jpg") no-repeat center center / cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      padding: 40px 50px;
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      max-width: 90%;
+    }
+
+    h1 {
+      color: #e91e63;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 60px;
+    }
+
+    button {
+      padding: 12px 26px;
+      font-size: 16px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+    }
+
+    #yes {
+      background-color: #e91e63;
+      color: white;
+      margin-right: 20px;
+    }
+
+    #no {
+      background-color: #ddd;
+      color: #555;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Bhargavi 💖</h1>
+    <p>
+      Let’s get to our <b>3rd year</b> as a couple, babe 🥺💕<br><br>
+      Will you be my Valentine?
+    </p>
+
+    <div class="buttons">
+      <button id="yes" onclick="yesClicked()">YES 😍</button>
+      <button id="no" onmouseover="moveNo()">NO 🙃</button>
+    </div>
+  </div>
+
+  <script>
+    function yesClicked() {
+      document.body.innerHTML = `
+        <div style="
+          height:100vh;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          background:
+            linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+            url('bg.jpg') no-repeat center center / cover;
+          font-family:'Comic Sans MS', cursive;
+          text-align:center;
+        ">
+          <h1 style="color:white; font-size:38px;">
+            3 YEARS & COUNTING 💍❤️<br><br>
+            I love you, Bhargavi 😘
+          </h1>
+        </div>
+      `;
+    }
+
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+      const x = Math.random() * 220 - 110;
+      const y = Math.random() * 90 - 45;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
+
+</body>
+</html>
