@@ -1,13 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For Bhargavi ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("cat.jpg") no-repeat center center / cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.95);
+      padding: 40px 45px;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      max-width: 90%;
+    }
+
+    h1 {
+      color: #e91e63;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 60px;
+    }
+
+    button {
+      padding: 12px 28px;
+      font-size: 16px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+    }
+
+    #yes {
+      background-color: #e91e63;
+      color: white;
+      margin-right: 20px;
+    }
+
+    #no {
+      background-color: #ddd;
+      color: #555;
+      position: absolute;
+    }
+  </style>
+</head>
+
 <body>
 
-<h2>Video Test</h2>
+  <div class="card">
+    <h1>Bhargavi 💖</h1>
+    <p>
+      Let’s get to our <b>3rd year</b> as a couple, babe 🥺💕<br><br>
+      Will you be my Valentine?
+    </p>
 
-<video controls width="300">
-  <source src="video1.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+    <div class="buttons">
+      <button id="yes" onclick="yesClicked()">YES 😍</button>
+      <button id="no" onmouseover="moveNo()">NO 🙃</button>
+    </div>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function yesClicked() {
+      const music = document.getElementById("bgMusic");
+      music.volume = 0;
+      music.play();
+
+      let vol = 0;
+      const fade = setInterval(() => {
+        if (vol < 0.6) {
+          vol += 0.02;
+          music.volume = vol;
+        } else {
+          clearInterval(fade);
+        }
+      }, 150);
+
+      document.body.innerHTML = `
+        <div style="
+          height:100vh;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          background:
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url('bg.jpg') no-repeat center center / cover;
+          font-family:'Comic Sans MS', cursive, sans-serif;
+          text-align:center;
+        ">
+          <h1 style="color:white; font-size:38px;">
+            🎶 Everybody Wants to Rule the World 🎶<br><br>
+            3 YEARS & COUNTING ❤️💍<br><br>
+            I love you, Bhargavi 😘
+          </h1>
+        </div>
+      `;
+    }
+
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+      const x = Math.random() * 220 - 110;
+      const y = Math.random() * 90 - 45;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
 
 </body>
 </html>
