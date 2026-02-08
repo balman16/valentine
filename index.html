@@ -10,7 +10,7 @@
       height: 100vh;
       background:
         linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url("bg.jpg") no-repeat center center / cover;
+        url("cat.jpg") no-repeat center center / cover;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -18,7 +18,7 @@
     }
 
     .card {
-      background: rgba(255,255,255,0.93);
+      background: rgba(255,255,255,0.95);
       padding: 35px 40px;
       border-radius: 22px;
       text-align: center;
@@ -44,10 +44,11 @@
     }
 
     .videos video {
-      width: 150px;
+      width: 160px;
       height: 220px;
       object-fit: cover;
       border-radius: 15px;
+      background: black;
     }
 
     .buttons {
@@ -87,12 +88,14 @@
     </p>
 
     <div class="videos">
-      <video autoplay muted loop playsinline>
+      <video muted autoplay loop playsinline preload="auto" controls>
         <source src="video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
       </video>
 
-      <video autoplay muted loop playsinline>
+      <video muted autoplay loop playsinline preload="auto" controls>
         <source src="video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
       </video>
     </div>
 
@@ -131,7 +134,7 @@
           background:
             linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
             url('bg.jpg') no-repeat center center / cover;
-          font-family:'Comic Sans MS', cursive;
+          font-family:'Comic Sans MS', cursive, sans-serif;
           text-align:center;
         ">
           <h1 style="color:white; font-size:38px;">
